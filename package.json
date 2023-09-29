@@ -1,0 +1,39 @@
+{
+  "name": "graficosreact",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "antd": "^5.5.2",
+    "axios": "^0.24.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "react-modal": "^3.16.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^5.0.0",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "string-to-color": "^2.2.2",
+    "styled-components": "^5.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:3000"
+}
