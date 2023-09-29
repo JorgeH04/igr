@@ -29,7 +29,9 @@ export default function PostVista({ mostrarError, match, usuario }) {
   useEffect(() => {
     async function cargarPost() {
       try {
-        const { data: post } = await Axios.get(`http://localhost:3000/api/posts/${postId}`);
+        
+        const { data: post } = await Axios.get(`https://igback-ec39561a3d0d.herokuapp.com/api/posts/${postId}`);
+     //   const { data: post } = await Axios.get(`http://localhost:3000/api/posts/${postId}`);
         setPost(post);
         setLoading(false);
       } catch (error) {
@@ -54,7 +56,9 @@ export default function PostVista({ mostrarError, match, usuario }) {
 
   async function eliminarPost() {
     try {
-      await Axios.delete(`http://localhost:3000/api/posts/posts/${postId}`);
+      
+      await Axios.delete(`https://igback-ec39561a3d0d.herokuapp.com/api/posts/posts/${postId}`);
+   //   await Axios.delete(`http://localhost:3000/api/posts/posts/${postId}`);
       console.log('Post eliminado correctamente');
       history.push('/');
     } catch (error) {

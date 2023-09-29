@@ -191,7 +191,10 @@ import Post from '../Componentes/Post';
 
 async function cargarPosts(fechaDelUltimoPost) {
   const query = fechaDelUltimoPost ? `?fecha=${fechaDelUltimoPost}` : '';
-  const { data: nuevosPosts } = await Axios.get(`/api/posts/feed${query}`);
+  
+  const { data: nuevosPosts } = await Axios.get(`https://igback-ec39561a3d0d.herokuapp.com/api/posts/feed${query}`);
+
+//  const { data: nuevosPosts } = await Axios.get(`/api/posts/feed${query}`);
   return nuevosPosts;
 }
 

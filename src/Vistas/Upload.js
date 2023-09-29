@@ -96,7 +96,9 @@ function Upload({ history, mostrarError }) {
     formData.append('files', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/posts/newupload', formData, {
+      /const response = await axios.post('https://igback-ec39561a3d0d.herokuapp.com/api/posts/newupload', formData, {
+      //  const response = await axios.post('http://localhost:3000/api/posts/newupload', formData, {
+
         headers: {
           'Content-Type': 'multipart/form-data',
          }

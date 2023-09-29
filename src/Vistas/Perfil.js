@@ -40,9 +40,13 @@ export default function Perfil({ mostrarError, usuario, match, logout, post }) {
     async function cargarPostsYUsuario() {
       try {
         setCargandoPefil(true);
-        const { data: usuario } = await Axios.get(`/api/usuarios/${username}`);
-        const { data: posts } = await Axios.get(`/api/posts/usuario/${usuario._id}`);
-        const usuarioxs  = await Axios.get('/api/usuarios/explore').then(({ data }) => data)
+        
+        const { data: usuario } = await Axios.get(`https://igback-ec39561a3d0d.herokuapp.com/api/usuarios/${username}`);
+        const { data: posts } = await Axios.get(`https://igback-ec39561a3d0d.herokuapp.com/api/posts/usuario/${usuario._id}`);
+        const usuarioxs  = await Axios.get('https://igback-ec39561a3d0d.herokuapp.com/api/usuarios/explore').then(({ data }) => data)
+        // const { data: usuario } = await Axios.get(`/api/usuarios/${username}`);
+        // const { data: posts } = await Axios.get(`/api/posts/usuario/${usuario._id}`);
+        // const usuarioxs  = await Axios.get('/api/usuarios/explore').then(({ data }) => data)
         setUsuarios(usuarioxs);
 
         setUsuarioDueñoDelPerfil(usuario);
@@ -79,7 +83,9 @@ export default function Perfil({ mostrarError, usuario, match, logout, post }) {
 
   const guardarCambios = async () => {
     try {
-      await Axios.put(`/api/usuarios/${usuarioDueñoDelPerfil._id}`, nuevosDatos);
+      
+      await Axios.put(`https://igback-ec39561a3d0d.herokuapp.com/api/usuarios/${usuarioDueñoDelPerfil._id}`, nuevosDatos);
+     // await Axios.put(`/api/usuarios/${usuarioDueñoDelPerfil._id}`, nuevosDatos);
      // await cargarPostsYUsuario();
       setEdicionActivada(false);
     } catch (error) {
@@ -91,7 +97,10 @@ export default function Perfil({ mostrarError, usuario, match, logout, post }) {
 
   async function obtenerSeguidos() {
     try {
-      const { data: seguidos } = await Axios.get(`http://localhost:3000/api/amistades/${usuarioDueñoDelPerfil._id}/siguiendo`);
+      
+      const { data: seguidos } = await Axios.get(`https://igback-ec39561a3d0d.herokuapp.com/api/amistades/${usuarioDueñoDelPerfil._id}/siguiendo`);
+
+    //  const { data: seguidos } = await Axios.get(`http://localhost:3000/api/amistades/${usuarioDueñoDelPerfil._id}/siguiendo`);
       console.log(seguidos); 
       setSeguidos(seguidos);
       setShowModal(true);
@@ -104,7 +113,10 @@ export default function Perfil({ mostrarError, usuario, match, logout, post }) {
 
   async function obtenerSeguidores() {
     try {
-      const { data: seguidores } = await Axios.get(`http://localhost:3000/api/amistades/${usuarioDueñoDelPerfil._id}/seguidores`);
+      
+      const { data: seguidores } = await Axios.get(`https://igback-ec39561a3d0d.herokuapp.com/api/amistades/${usuarioDueñoDelPerfil._id}/seguidores`);
+
+    //  const { data: seguidores } = await Axios.get(`http://localhost:3000/api/amistades/${usuarioDueñoDelPerfil._id}/seguidores`);
       console.log(seguidores); 
       setSeguidores(seguidores);
       setShowModall(true);

@@ -17,8 +17,12 @@ export default function Explore({ mostrarError}) {
     async function cargarPostsYUsuarios() {
       try {
         const [posts, usuarios] = await Promise.all([
-          Axios.get('/api/posts/explore').then(({ data }) => data),
-          Axios.get('/api/usuarios/explore').then(({ data }) => data)
+
+          
+          Axios.get('https://igback-ec39561a3d0d.herokuapp.com/api/posts/explore').then(({ data }) => data),
+          Axios.get('https://igback-ec39561a3d0d.herokuapp.com/api/usuarios/explore').then(({ data }) => data)
+          // Axios.get('/api/posts/explore').then(({ data }) => data),
+          // Axios.get('/api/usuarios/explore').then(({ data }) => data)
         ]);
         setPosts(posts);
         setUsuarios(usuarios);
