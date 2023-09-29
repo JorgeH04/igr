@@ -2,7 +2,9 @@ import Axios from 'axios';
 
 
 export async function toggleLike(post) {
-  const url = `/api/posts/${post._id}/likes`;
+  
+  const url = `https://igback-ec39561a3d0d.herokuapp.com/api/posts/${post._id}/likes`;
+ // const url = `/api/posts/${post._id}/likes`;
   let postConLikeActualizado;
   if (post.estaLike) {
     await Axios.delete(url, {});
