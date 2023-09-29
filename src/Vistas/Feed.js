@@ -252,6 +252,19 @@ export default function Feed({ mostrarError, usuario }) {
     }
   };
 
+
+  function actualizarPost(postOriginal, postActualizado) {
+    setPosts(posts => {
+      const postsActualizados = posts.map(post => {
+        if (post !== postOriginal) {
+          return post;
+        }
+        return postActualizado;
+      });
+      return postsActualizados;
+    });
+  }
+
  
   if (cargandoPostIniciales) {
     return (
@@ -265,7 +278,7 @@ export default function Feed({ mostrarError, usuario }) {
       <Main center>
         <NoSiguesANadie />
       </Main>
-    );
+    );          
   }
   return (
     <Main center>
@@ -276,6 +289,8 @@ export default function Feed({ mostrarError, usuario }) {
             post={post}
             mostrarError={mostrarError}
             usuario={usuario}
+            actualizarPost={actualizarPost}
+
            />
         ))}
     

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 export default function Comentar({ onSubmitComentario, mostrarError }) {
   const [mensaje, setMensaje] = useState('');
   const [enviandoComentario, setEnviandoComentario] = useState(false);
-
+  
   
   async function onSubmit(e) {
     e.preventDefault();

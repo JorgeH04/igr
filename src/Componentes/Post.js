@@ -28,46 +28,9 @@ export default function Post({ post, actualizarPost, mostrarError, usuario, matc
   const [enviandoLike, setEnviandoLike] = useState(false);
   const [showLikesModal, setShowLikesModal] = useState(false);
   const [likes, setLikes] = useState([]);
-
   const [enviandoAmistad, setEnviandoAmistad] = useState(false);
   const [cargandoPerfil, setCargandoPefil] = useState(true);
   const [usuarioDueñoDelPerfil, setUsuarioDueñoDelPerfil] = useState(null);
-
-
-
-
-  // useEffect(() => {
-
-  //   async function cargarPostsYUsuario() {
-  //     try {
-  //       setCargandoPefil(true);
-  //       const { data: usuario } = await Axios.get(`/api/usuarios/${username}`);
-  //    //   const { data: posts } = await Axios.get(`/api/posts/usuario/${usuario._id}`);
-    
-
-  //       setUsuarioDueñoDelPerfil(usuario);
-  //    //   setPosts(posts);
-
-  //       setCargandoPefil(false);
-  //     } catch (error) {
-  //       if (
-  //         error.response &&
-  //         (error.response.status === 404 || error.response.status === 400)
-  //       ) {
-  //        // setPerfilNoExiste(true);
-  //       } else {
-  //         mostrarError('Hubo un problema cargando este perfil.');
-  //       }
-  //       setCargandoPefil(false);
-  //     }
-  //   }
-  //   cargarPostsYUsuario();
-  // }, [username]);
-
-
-
-
- 
 
 
  
@@ -225,3 +188,6 @@ function BotonSeguir({ siguiendo, toggleSiguiendo }) {
     </button>
   );
 }
+
+
+

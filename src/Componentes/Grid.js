@@ -80,7 +80,7 @@ export default function Grid({ posts, esElPerfilDeLaPersonaLogin }) {
               <div key={post._id} className="Grid__post">
                 <Link to={`/post/${post._id}`}>
                   <img
-                    src={post.url}
+                    src={post.imageuno}
                     alt={post.caption}
                     className="Grid__post-img"
                   />

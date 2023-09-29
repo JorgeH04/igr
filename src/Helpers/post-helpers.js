@@ -1,4 +1,6 @@
 import Axios from 'axios';
+
+
 export async function toggleLike(post) {
   const url = `/api/posts/${post._id}/likes`;
   let postConLikeActualizado;
@@ -19,6 +21,10 @@ export async function toggleLike(post) {
   }
   return postConLikeActualizado;
 }
+
+
+
+
 export async function comentar(post, mensaje, usuario) {
   const { data: nuevoComentario } = await Axios.post(
     `/api/posts/${post._id}/comentarios`,
